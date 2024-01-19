@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base Script</title>
+</head>
+
+<body>
+  <main class="main p-3 pt-4">
+    <em class="text-dark">根据排序字段计算排名，排序字段值相等的，排名相等(并列)。</em><br />
+    <em class="text-info">排序字段和排名字段必须是数字，分类字段可以是文本、数字和单选。</em>
+    <form>
+      <div class="mb-3">
+        <label for="tableSelect" class="form-label text-danger">*选择数据表</label>
+        <select id='tableSelect' class="form-select" required="true"></select>
+      </div>
+      <div class="mb-3">
+        <label for="filedCalcSelect" class="form-label text-danger">*选择排序字段（计算）</label>
+        <select id='filedCalcSelect' class="form-select" required="true"></select>
+      </div>
+      <div class="mb-3">
+        <label for="filedRankSelect" class="form-label text-danger">*选择排名字段（写入）</label>
+        <select id='filedRankSelect' class="form-select" required="true"></select>
+      </div>
+      <div class="mb-3">
+        <label for="descTypeSelect" class="form-label text-danger">*选择排序方式</label>
+        <select id='descTypeSelect' class="form-select" required="true">
+          <option value="1">正序（从小到大）</option>
+          <option value="2">逆序（从大到小）</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="filedTypeSelect" class="form-label">选择分类字段<br />（可选,选择后按照此分类分别进行排名）</label>
+        <select id='filedTypeSelect' class="form-select"></select>
+      </div>
+      <button class='btn btn-outline-primary' type="button" id="calcRank">
+        计算排名
+      </button><br /><br />
+    </form>
+  </main>
+  <script type="module" src="/src/index.ts"></script>
+</body>
+
+</html>
